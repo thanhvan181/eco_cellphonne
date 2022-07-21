@@ -1,0 +1,120 @@
+{
+  "users": [],
+  "products": [
+    {
+      "name": "Shafira Newton ee",
+      "originalPrice": 556,
+      "saleOffPrice": 76,
+      "categories": "phone",
+      "feature": "Animi sint inventor",
+      "description": "Suscipit sit vero n",
+      "id": 9
+    },
+    {
+      "name": "Declan Rivera",
+      "originalPrice": 575,
+      "saleOffPrice": 271,
+      "categories": "laptop",
+      "feature": "Culpa Nam dolor in a",
+      "description": "Nemo cupidatat repre",
+      "id": 10
+    },
+    {
+      "name": "dfdaf",
+      "originalPrice": 12,
+      "saleOffPrice": 2,
+      "categories": "phone",
+      "feature": "fsfda",
+      "description": "aadfadf",
+      "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658402652/anhhtus/oe1kzod8p3rxxb3o5cdv.jpg",
+      "id": 11
+    },
+    {
+      "name": "rgsegsgsf",
+      "originalPrice": 323,
+      "saleOffPrice": 23,
+      "categories": "phone",
+      "feature": "134dafdf",
+      "description": "adfadfasdf",
+      "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658402785/anhhtus/u9eiawql1yqomptqkafj.jpg",
+      "id": 12
+    },
+    {
+      "name": "sdfdsfdsfs",
+      "originalPrice": 12,
+      "saleOffPrice": 2,
+      "categories": "phone",
+      "feature": "dd",
+      "description": "sss",
+      "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658402882/anhhtus/ydsuqnr6jvoiqvdgjlvu.jpg",
+      "id": 13
+    },
+    {
+      "name": "ecomercedfsdf",
+      "originalPrice": 211,
+      "saleOffPrice": 21,
+      "categories": "laptop",
+      "feature": "11dfsf",
+      "description": "sdfsfsdf",
+      "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658403211/anhhtus/eibx6pg58lpdcrkhfl3z.jpg",
+      "id": 14
+    },
+    {
+      "name": "productAfdadf",
+      "originalPrice": 123,
+      "saleOffPrice": 12,
+      "categories": "phone",
+      "feature": "12",
+      "description": "1221",
+      "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658403368/anhhtus/mbmjtogwip3egu3xnkxl.jpg",
+      "id": 15
+    },
+    {
+      "name": "ddafadf",
+      "originalPrice": 1234,
+      "saleOffPrice": 122,
+      "categories": "laptop",
+      "feature": "12321",
+      "description": "21312",
+      "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658403491/anhhtus/zj38b3zahrh4vowje6h4.jpg",
+      "id": 16
+    },
+    {
+      "name": "goi omc",
+      "originalPrice": 341412,
+      "saleOffPrice": 12132,
+      "categories": "phone",
+      "feature": "123123",
+      "description": "12323",
+      "id": 17
+    },
+    {
+      "name": "Eugenia Harrell edit",
+      "originalPrice": 693,
+      "saleOffPrice": 246,
+      "categories": "laptop",
+      "feature": "Totam voluptate quia",
+      "description": "Voluptas officia com",
+      "id": 18
+    },
+    {
+      "name": "Alexa Huber",
+      "originalPrice": 968,
+      "saleOffPrice": 639,
+      "categories": "laptop",
+      "feature": "Odio similique rerum",
+      "description": "Quis recusandae Seq",
+      "imageUrl": "",
+      "id": 19
+    },
+    {
+      "name": "Hang thoi trang",
+      "originalPrice": 243,
+      "saleOffPrice": 88,
+      "categories": "laptop",
+      "feature": "Sequi et excepteur q",
+      "description": "Doloremque soluta mi",
+      "id": 20
+    }
+  ]
+}
