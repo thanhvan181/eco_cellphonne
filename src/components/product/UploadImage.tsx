@@ -51,7 +51,7 @@ const UploadImage = (prop:any) => {
   
 
   const hanldeBeforeUpload = (file: any) => {
-    const isLt2M = file.size / 1024 / 1024 < 2;
+    const isLt2M = file.size / 1024  < 200;
     console.log("IMage size: ", file.size, typeof file.size)
     const isJpgOrPng = file.type === "image/jpeg" || file.type === "image/png" || file.type === "image/jpg" || file.type ==="image/gif";
     if (!isJpgOrPng) {
@@ -60,11 +60,12 @@ const UploadImage = (prop:any) => {
       return false
     }
     if (!isLt2M) {
-        console.log("size")
+        
     
-        message.error("Image must smaller than 2MB!");
+        message.error("Image must smaller than 2kB!");
         return false
     }
+
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => uploadImage(reader.result as string);

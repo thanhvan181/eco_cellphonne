@@ -8,7 +8,8 @@
       "categories": "phone",
       "feature": "Animi sint inventor",
       "description": "Suscipit sit vero n",
-      "id": 9
+      "id": 9,
+      "categoryid": 1
     },
     {
       "name": "Declan Rivera",
@@ -17,7 +18,8 @@
       "categories": "laptop",
       "feature": "Culpa Nam dolor in a",
       "description": "Nemo cupidatat repre",
-      "id": 10
+      "id": 10,
+      "categoryid": 2
     },
     {
       "name": "dfdaf",
@@ -27,7 +29,8 @@
       "feature": "fsfda",
       "description": "aadfadf",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658402652/anhhtus/oe1kzod8p3rxxb3o5cdv.jpg",
-      "id": 11
+      "id": 11,
+      "categoryid": 3
     },
     {
       "name": "rgsegsgsf",
@@ -37,7 +40,8 @@
       "feature": "134dafdf",
       "description": "adfadfasdf",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658402785/anhhtus/u9eiawql1yqomptqkafj.jpg",
-      "id": 12
+      "id": 12,
+      "categoryid": 4
     },
     {
       "name": "sdfdsfdsfs",
@@ -47,7 +51,8 @@
       "feature": "dd",
       "description": "sss",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658402882/anhhtus/ydsuqnr6jvoiqvdgjlvu.jpg",
-      "id": 13
+      "id": 13,
+      "categoryid": 4
     },
     {
       "name": "ecomercedfsdf",
@@ -57,7 +62,8 @@
       "feature": "11dfsf",
       "description": "sdfsfsdf",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658403211/anhhtus/eibx6pg58lpdcrkhfl3z.jpg",
-      "id": 14
+      "id": 14,
+      "categoryid": 4
     },
     {
       "name": "productAfdadf",
@@ -67,7 +73,8 @@
       "feature": "12",
       "description": "1221",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658403368/anhhtus/mbmjtogwip3egu3xnkxl.jpg",
-      "id": 15
+      "id": 15,
+      "categoryid": 3
     },
     {
       "name": "ddafadf",
@@ -77,7 +84,8 @@
       "feature": "12321",
       "description": "21312",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658403491/anhhtus/zj38b3zahrh4vowje6h4.jpg",
-      "id": 16
+      "id": 16,
+      "categoryid": 2
     },
     {
       "name": "goi omc",
@@ -86,7 +94,8 @@
       "categories": "phone",
       "feature": "123123",
       "description": "12323",
-      "id": 17
+      "id": 17,
+      "categoryid": 3
     },
     {
       "name": "Eugenia Harrell edit",
@@ -95,7 +104,8 @@
       "categories": "laptop",
       "feature": "Totam voluptate quia",
       "description": "Voluptas officia com",
-      "id": 18
+      "id": 18,
+      "categoryid": 2
     },
     {
       "name": "Alexa Huber",
@@ -105,16 +115,34 @@
       "feature": "Odio similique rerum",
       "description": "Quis recusandae Seq",
       "imageUrl": "",
-      "id": 19
+      "id": 19,
+      "categoryid": 4
+    }
+   
+  ],
+  "category": [
+    {
+      
+      "name": "Danh muc1",
+      "id": 1
+
     },
     {
-      "name": "Hang thoi trang",
-      "originalPrice": 243,
-      "saleOffPrice": 88,
-      "categories": "laptop",
-      "feature": "Sequi et excepteur q",
-      "description": "Doloremque soluta mi",
-      "id": 20
+      "name": "Danh muc2",
+      "id": 2
+    },
+    {
+      "name": "Danh muc3",
+      "id": 3
+    },
+    {
+      "name": "Danh muc4",
+      "id": 4
     }
+
+    
+
+
   ]
+  
 }
