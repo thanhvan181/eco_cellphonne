@@ -33,7 +33,7 @@ const ListProduct = () => {
     if (idvalue) {
       const data = dataTable.filter((o: any) => o.categoryid == idvalue)
       setProductFilter(data)
-      // setDataTable(data)
+     
 
     }
     else {

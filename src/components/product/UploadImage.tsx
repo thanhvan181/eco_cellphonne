@@ -38,6 +38,7 @@ const UploadImage = (prop:any) => {
       const res = await upload(base64Image);
       const data = res.data;
       console.log(data);
+     
       setUploadedImage(data.url);
       prop.setImageUrl(data.url);
     } catch (err) {

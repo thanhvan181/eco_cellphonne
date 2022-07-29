@@ -117,15 +117,31 @@
       "imageUrl": "",
       "id": 19,
       "categoryid": 4
+    },
+    {
+      "name": "Lynn Sloan",
+      "originalPrice": 985,
+      "saleOffPrice": 461,
+      "categories": "laptop",
+      "feature": "Numquam est id ab es",
+      "description": "Omnis dicta nisi nis",
+      "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1658539445/anhhtus/h89m2dnaxzyvnntxavvg.jpg",
+      "id": 20
+    },
+    {
+      "name": "Maryam Le edit",
+      "originalPrice": 197,
+      "saleOffPrice": 18,
+      "categories": "laptop",
+      "feature": "Fugiat et elit sed",
+      "description": "Et cillum deserunt d",
+      "id": 21
     }
-   
   ],
   "category": [
     {
-      
       "name": "Danh muc1",
       "id": 1
-
     },
     {
       "name": "Danh muc2",
@@ -139,10 +155,5 @@
       "name": "Danh muc4",
       "id": 4
     }
-
-    
-
-
   ]
-  
 }
