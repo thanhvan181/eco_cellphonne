@@ -1,5 +1,5 @@
 
-import Producttop from "../../components/ProductTop/Producttop";
+import Producttop from "../../../components/ProductTop/Producttop";
 
 const HomePage = () => {
   const onChange = (currentSlide: number) => {

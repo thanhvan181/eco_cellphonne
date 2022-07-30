@@ -1,200 +1,47 @@
 import { Col, Row, Slider } from "antd";
 import React, { useState } from "react";
 import * as S from "./styles";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getAlls } from "../../store/products/actions";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const ProductTop: React.FC = () => {
-    
+  const dispatch = useDispatch();
+  const productList = useSelector((store: any) => store.product.list.result);
+    console.log("productList", productList);
+    const params = useParams();
+    console.log("params", params)
+
+  useEffect(() => {
+    dispatch(getAlls() as any);
+  }, []);
+
   return (
     <>
       <Row gutter={16}>
-        <Col className="gutter-row" span={4}>
-          <div>
-            <img
-              width={200}
-              height={200}
-              src="https://vcdn-sohoa.vnecdn.net/2020/05/25/iPhone-12-Blue-2785-1590377566.jpg"
-            />
-            <h6>iPhone 11 64GB I Chính hãng VN/A</h6>
-            <span>10.790.000 ₫</span>
-            <p>
-              [HOT] Thu cũ lên đời giá cao - Thủ tục nhanh - Trợ giá lên tới
-              1.000.000đ
-            </p>
-          </div>
-        </Col>
-        <Col className="gutter-row" span={4}>
-          <div>
-            <img
-              width={200}
-              height={200}
-              src="https://vcdn-sohoa.vnecdn.net/2020/05/25/iPhone-12-Blue-2785-1590377566.jpg"
-            />
-            <h6>iPhone 11 64GB I Chính hãng VN/A</h6>
-            <span>10.790.000 ₫</span>
-            <p>
-              [HOT] Thu cũ lên đời giá cao - Thủ tục nhanh - Trợ giá lên tới
-              1.000.000đ
-            </p>
-          </div>
-        </Col>
-
-        <Col className="gutter-row" span={4}>
-          <div>
-            <img
-              width={200}
-              height={200}
-              src="https://vcdn-sohoa.vnecdn.net/2020/05/25/iPhone-12-Blue-2785-1590377566.jpg"
-            />
-            <h6>iPhone 11 64GB I Chính hãng VN/A</h6>
-            <span>10.790.000 ₫</span>
-            <p>
-              [HOT] Thu cũ lên đời giá cao - Thủ tục nhanh - Trợ giá lên tới
-              1.000.000đ
-            </p>
-          </div>
-        </Col>
-
-        <Col className="gutter-row" span={4}>
-          <div>
-            <img
-              width={200}
-              height={200}
-              src="https://vcdn-sohoa.vnecdn.net/2020/05/25/iPhone-12-Blue-2785-1590377566.jpg"
-            />
-            <h6>iPhone 11 64GB I Chính hãng VN/A</h6>
-            <span>10.790.000 ₫</span>
-            <p>
-              [HOT] Thu cũ lên đời giá cao - Thủ tục nhanh - Trợ giá lên tới
-              1.000.000đ
-            </p>
-          </div>
-        </Col>
-
-        <Col className="gutter-row" span={4}>
-          <div>
-            <img
-              width={200}
-              height={200}
-              src="https://vcdn-sohoa.vnecdn.net/2020/05/25/iPhone-12-Blue-2785-1590377566.jpg"
-            />
-            <h6>iPhone 11 64GB I Chính hãng VN/A</h6>
-            <span>10.790.000 ₫</span>
-            <p>
-              [HOT] Thu cũ lên đời giá cao - Thủ tục nhanh - Trợ giá lên tới
-              1.000.000đ
-            </p>
-          </div>
-        </Col>
-
-        <Col className="gutter-row" span={4}>
-          <div>
-            <img
-              width={200}
-              height={200}
-              src="https://vcdn-sohoa.vnecdn.net/2020/05/25/iPhone-12-Blue-2785-1590377566.jpg"
-            />
-            <h6>iPhone 11 64GB I Chính hãng VN/A</h6>
-            <span>10.790.000 ₫</span>
-            <p>
-              [HOT] Thu cũ lên đời giá cao - Thủ tục nhanh - Trợ giá lên tới
-              1.000.000đ
-            </p>
-          </div>
-        </Col>
-
-        <Col className="gutter-row" span={4}>
-          <div>
-            <img
-              width={200}
-              height={200}
-              src="https://vcdn-sohoa.vnecdn.net/2020/05/25/iPhone-12-Blue-2785-1590377566.jpg"
-            />
-            <h6>iPhone 11 64GB I Chính hãng VN/A</h6>
-            <span>10.790.000 ₫</span>
-            <p>
-              [HOT] Thu cũ lên đời giá cao - Thủ tục nhanh - Trợ giá lên tới
-              1.000.000đ
-            </p>
-          </div>
-        </Col>
-        <Col className="gutter-row" span={4}>
-          <div>
-            <img
-              width={200}
-              height={200}
-              src="https://vcdn-sohoa.vnecdn.net/2020/05/25/iPhone-12-Blue-2785-1590377566.jpg"
-            />
-            <h6>iPhone 11 64GB I Chính hãng VN/A</h6>
-            <span>10.790.000 ₫</span>
-            <p>
-              [HOT] Thu cũ lên đời giá cao - Thủ tục nhanh - Trợ giá lên tới
-              1.000.000đ
-            </p>
-          </div>
-        </Col>
-
-        <Col className="gutter-row" span={4}>
-          <div>
-            <img
-              width={200}
-              height={200}
-              src="https://vcdn-sohoa.vnecdn.net/2020/05/25/iPhone-12-Blue-2785-1590377566.jpg"
-            />
-            <h6>iPhone 11 64GB I Chính hãng VN/A</h6>
-            <span>10.790.000 ₫</span>
-            <p>
-              [HOT] Thu cũ lên đời giá cao - Thủ tục nhanh - Trợ giá lên tới
-              1.000.000đ
-            </p>
-          </div>
-        </Col>
-        <Col className="gutter-row" span={4}>
-          <div>
-            <img
-              width={200}
-              height={200}
-              src="https://vcdn-sohoa.vnecdn.net/2020/05/25/iPhone-12-Blue-2785-1590377566.jpg"
-            />
-            <h6>iPhone 11 64GB I Chính hãng VN/A</h6>
-            <span>10.790.000 ₫</span>
-            <p>
-              [HOT] Thu cũ lên đời giá cao - Thủ tục nhanh - Trợ giá lên tới
-              1.000.000đ
-            </p>
-          </div>
-        </Col>
-
-        <Col className="gutter-row" span={4}>
-          <div>
-            <img
-              width={200}
-              height={200}
-              src="https://vcdn-sohoa.vnecdn.net/2020/05/25/iPhone-12-Blue-2785-1590377566.jpg"
-            />
-            <h6>iPhone 11 64GB I Chính hãng VN/A</h6>
-            <span>10.790.000 ₫</span>
-            <p>
-              [HOT] Thu cũ lên đời giá cao - Thủ tục nhanh - Trợ giá lên tới
-              1.000.000đ
-            </p>
-          </div>
-        </Col>
-
-        <Col className="gutter-row" span={4}>
-          <div>
-            <img
-              width={200}
-              height={200}
-              src="https://vcdn-sohoa.vnecdn.net/2020/05/25/iPhone-12-Blue-2785-1590377566.jpg"
-            />
-            <h6>iPhone 11 64GB I Chính hãng VN/A</h6>
-            <span>10.790.000 ₫</span>
-            <p>
-              [HOT] Thu cũ lên đời giá cao - Thủ tục nhanh - Trợ giá lên tới
-              1.000.000đ
-            </p>
-          </div>
-        </Col>
+        {productList &&
+          productList.map((o: any) => (
+            <Col className="gutter-row" span={4}>
+                  <div>
+                      <Link to={`/product/${o.id}`}>
+                          <img
+                              width={200}
+                              height={200}
+                              src={o.imageUrl}
+                          />
+                          <h3>{o.name}</h3>
+                          <span>10.790.000 ₫</span>
+                          <p>
+                              [HOT] Thu cũ lên đời giá cao - Thủ tục nhanh - Trợ giá lên tới
+                              1.000.000đ
+                          </p>
+                      </Link>
+                
+              </div>
+            </Col>
+          ))}
       </Row>
     </>
   );

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const StyleHeader = styled.div`
 
-    position: sticky;
+  position: sticky;
   height: 64px;
   width: 100%;
   left: 0px;

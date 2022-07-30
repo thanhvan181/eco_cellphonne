@@ -9,7 +9,9 @@ import MenuHeader from './components/Menu/Menu';
 import AddProductPage from './pages/admin/product/add';
 import EditProductPage from './pages/admin/product/edit';
 import ListProduct from './pages/admin/product/list';
-import HomePage from './pages/home/home';
+import CartList from './pages/website/cart/CartList';
+import HomePage from './pages/website/home/home';
+import ProductDetails from './pages/website/product/ProductDetails';
 
 
 const App = () => {
@@ -34,11 +36,17 @@ const App = () => {
         </Route>
         <Route path='' element={<WebsiteLayout />}>
           <Route index element={<HomePage />}></Route>
+          <Route path="product/:id" element={<ProductDetails />} />
 
 
 
 
 
+
+        </Route>
+        <Route path='cart' element={<WebsiteLayout/>}>
+          <Route index element={<CartList />}></Route>
+          
 
         </Route>
 
