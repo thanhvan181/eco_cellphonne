@@ -6,6 +6,7 @@ import * as S from "./Header.styles"
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
+import { getTotals } from '../../store/cart/cartSlide'
 
 
 
@@ -17,7 +18,7 @@ const Header = () => {
     { text: "Gọi mua hàng 1800.2097", icon: "", link: "/" },
     { text: "Cửa hàng gần bạn", icon: <EnvironmentOutlined style={{ fontSize: '150%' }} />, link: "/" },
     { text: "Tra cứu đơn hàng", icon: <CarOutlined style={{ fontSize: '150%' }} />, link: "/" },
-    { text: "Giỏ hàng", icon: <ShoppingCartOutlined style={{ fontSize: '150%' }} />, link: "/" },
+    { text: `Gio hang(${countcart})`, icon: <ShoppingCartOutlined style={{ fontSize: '150%' }} />, link: "/" },
   ]
   useEffect(() => {
     setCountCart(carts.length)
