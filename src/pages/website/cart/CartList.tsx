@@ -37,10 +37,10 @@ const CartList = () => {
               carts && carts.map((o: any) => (
                   <Row>
                       <Col span={12}>
-                          <img src={o.imageUrl} alt="" />
+                          <img src={o.image} alt="" />
                       </Col>
                       <Col span={12}>
-                          <h1>{ o.name}</h1>
+                          <h1>{o.name}</h1>
                           <p>{o.originalPrice }</p>
                           <button
 

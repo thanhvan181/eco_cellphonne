@@ -13,12 +13,13 @@ import { getTotals } from '../../store/cart/cartSlide'
 const Header = () => {
   const [countcart, setCountCart] = useState(0)
   const carts = useSelector((state: any) => state.cart.items)
+  console.log("cartItems", carts)
 
   const dataHeaderLeft = [
     { text: "Gọi mua hàng 1800.2097", icon: "", link: "/" },
     { text: "Cửa hàng gần bạn", icon: <EnvironmentOutlined style={{ fontSize: '150%' }} />, link: "/" },
     { text: "Tra cứu đơn hàng", icon: <CarOutlined style={{ fontSize: '150%' }} />, link: "/" },
-    { text: `Gio hang(${countcart})`, icon: <ShoppingCartOutlined style={{ fontSize: '150%' }} />, link: "/" },
+    { text: `Gio hang(${countcart})`, icon: <ShoppingCartOutlined style={{ fontSize: '150%' }} />, link: "/cart" },
   ]
   useEffect(() => {
     setCountCart(carts.length)

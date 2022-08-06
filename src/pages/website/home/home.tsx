@@ -13,14 +13,12 @@ const HomePage = () => {
     <>
 
       <div>
-        <BannerMenu/>
+        <BannerMenu />
 
 
       </div>
       <Producttop />
-      <div>
-        <Footer/>
-      </div>
+
     </>
   );
 };

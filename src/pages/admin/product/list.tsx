@@ -24,7 +24,8 @@ interface DataType {
 const ListProduct = () => {
   const [dataTable, setDataTable] = useState([]);
   console.log("DataTable", dataTable)
-  const[productfilter, setProductFilter] = useState([])
+  const [productfilter, setProductFilter] = useState([])
+  console.log("productFiter", productfilter)
   const onChange = (checked: boolean) => {
     console.log(`switch to ${checked}`);
   };
@@ -61,8 +62,8 @@ const ListProduct = () => {
     },
     {
       title: "Image",
-      dataIndex: "imageUrl",
-      key: "imageUrl",
+      dataIndex: "image",
+      key: "image",
       render: (image) => <img width={100} height={100} src={image}></img>,
     },
     {
@@ -94,8 +95,9 @@ const ListProduct = () => {
       dataIndex: "",
       key: "",
       render: (record: any) => {
+        console.log("record", record)
         return (
-          <Link to={`/admin/product/${record.id}/edit`}>
+          <Link to={`/admin/product/${record._id}/edit`}>
             <EditOutlined style={{ fontSize: "25px", color: "#08c" }} />
           </Link>
         );
@@ -146,7 +148,7 @@ const ListProduct = () => {
           </Link>
         </div>
       </Breadcrumb>
-      <Table columns={columns} dataSource={productfilter} />
+      <Table  columns={columns} dataSource={productfilter} />
     </>
   );
 };

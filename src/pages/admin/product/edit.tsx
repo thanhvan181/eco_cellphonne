@@ -1,12 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { Typography, Col, Row, Button, Checkbox, Form, Input, InputNumber, Select, message } from 'antd'
+import { Typography, Col, Row, Button, Checkbox, Form, Input, InputNumber, Select, message, Upload, UploadProps } from 'antd'
 import UploadImage from "../../../components/product/UploadImage";
-import { createProduct, readoneProduct, updateproduct } from "../../../service/product";
+import { create, read, updateproduct } from "../../../service/product";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { upload } from "../../../service/image";
+import { PlusCircleOutlined } from "@ant-design/icons";
 
 
 const { TextArea } = Input
@@ -15,21 +16,27 @@ const { Option } = Select;
 
 const EditProductPage = () => {
 	const [imageUrl, setImageUrl] = useState("")
+	console.log("ImageUrl: ", imageUrl)
 	const navigate = useNavigate()
+	const [isImageEdit, setIsImageEdit] = useState(false)
+	const [uploadedImage, setUploadedImage] = React.useState("");
+	const [fileList, setFileList] = useState<any>([])
 	const onFinish = async (values: any) => {
-		// console.log("ImageUrl: ", imageUrl)
-		if(values.saleOffPrice > values.originalPrice){
+
+		if (values.saleOffPrice > values.originalPrice) {
 			message.error(`gia khuyen mai${values.saleOffPrice} khong duoc lon hon gia goc ${values.originalPrice}`)
 			return false
 		}
-		
+
 
 		try {
-			// values = {...values, "imageUrl": imageUrl}
+			// values.image = uploadedImage
+			values = {...values, "image": imageUrl}
 			// console.log("VALUE:: ", values)
 			const data = await updateproduct(id, values)
 			console.log("Data", data.data);
-            
+
+
 			// const result = []
 
 			message.success("Update  thành công")
@@ -38,23 +45,77 @@ const EditProductPage = () => {
 			message.error("Có lỗi xảy ra")
 		}
 	};
-    const { id } = useParams();
-    const [form] = Form.useForm();
+	const { id } = useParams();
+	const [form] = Form.useForm();
 
 	const onFinishFailed = (errorInfo: any) => {
 		console.log('Failed:', errorInfo);
 	};
-    useEffect(() => {
-        const loadreadone = async () => {
-            const result = await readoneProduct(id)
-            const res = result.data
-            form.setFieldsValue(res)
-        
+	const uploadImage = async (base64Image: string) => {
+		console.log("baase64", base64Image);
+		try {
+			const res = await upload(base64Image);
+			const data = res.data;
+			console.log("data", data);
+			setImageUrl(data.url)
 
-        }
-        loadreadone()
-       
-    }, [id])
+			setUploadedImage(data.url);
+
+		} catch (err) {
+			console.log(err);
+		}
+	};
+
+
+
+
+
+
+	const hanldeBeforeUpload = (file: any) => {
+		const isLt2M = file.size / 1024 < 200;
+		console.log("IMage size: ", file.size, typeof file.size)
+		const isJpgOrPng = file.type === "image/jpeg" || file.type === "image/png" || file.type === "image/jpg" || file.type === "image/gif";
+		if (!isJpgOrPng) {
+
+			message.error(`${file.name} is not a png file`);
+			return false
+		}
+		if (!isLt2M) {
+
+
+			message.error("Image must smaller than 2kB!");
+			return false
+		}
+
+		const reader = new FileReader();
+		reader.readAsDataURL(file);
+		reader.onload = () => uploadImage(reader.result as string);
+		
+
+
+		return isJpgOrPng || isLt2M || Upload.LIST_IGNORE;
+	};
+	const props: UploadProps = {
+
+		multiple: false,
+
+		beforeUpload: hanldeBeforeUpload,
+		// customRequest: uploadImage,
+	};
+
+	useEffect(() => {
+		const loadreadone = async () => {
+			const result = await read(id)
+			const res = result.data
+			console.log("res", res)
+			setImageUrl(res.image)
+			form.setFieldsValue(res)
+
+
+		}
+		loadreadone()
+
+	}, [id])
 
 	return (
 		<>
@@ -65,13 +126,25 @@ const EditProductPage = () => {
 			</Breadcrumb>
 			<Row gutter={16}>
 				<Col span={10}>
-					<UploadImage setImageUrl={setImageUrl}/>
-					{/* <UploadTest/> */}
+					<UploadWrapper>
+
+						<Upload {...props} fileList={fileList}>
+							<Button
+								icon={<PlusCircleOutlined style={{ fontSize: 30 }} />}
+							></Button>
+						</Upload>
+
+
+					
+							<ImagePreview style={{}} src={imageUrl} alt="Image" />
+						
+					</UploadWrapper>
+
 				</Col>
 				<Col span={14}>
 					<Typography.Title level={5}>Thông tin sản phẩm</Typography.Title>
 					<Form
-                        form={form}
+						form={form}
 						// name="product"
 						initialValues={{}}
 						onFinish={onFinish}
@@ -86,7 +159,7 @@ const EditProductPage = () => {
 							rules={[{ required: true, message: 'Tên sản phẩm không được trống' }]}
 						>
 							<Input size="large" />
-						</Form.Item>	
+						</Form.Item>
 						{/* <Form.Item
 							name="image_url"
 							labelCol={{ span: 24 }}
@@ -174,5 +247,16 @@ const Breadcrumb = styled.div`
 const Label = styled.div`
 	font-size: 13px;
 `
+const UploadWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border: 1px dashed gray;
+`;
+const ImagePreview = styled.img`
+  width: 100%;
+`;
 
 export default EditProductPage

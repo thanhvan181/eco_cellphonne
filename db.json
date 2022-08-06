@@ -9,7 +9,8 @@
       "feature": "Aliqua Ut rem exerc",
       "description": "Est consequatur Deb",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659165019/anhhtus/fqnuz7ciuhgnqcqcjnp6.png",
-      "id": 22
+      "id": 22,
+      "categoryId": 1
     },
     {
       "name": "Wallace Kelly",
@@ -19,7 +20,8 @@
       "feature": "Cumque sunt earum la",
       "description": "Quo doloremque ipsa",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659165069/anhhtus/geh6ndv5q3rhvt94imgx.png",
-      "id": 23
+      "id": 23,
+      "categoryId": 2
     },
     {
       "name": "Amal Dennis",
@@ -29,7 +31,8 @@
       "feature": "Ut rerum itaque eum ",
       "description": "Ullam consequatur I",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659165086/anhhtus/obchyhy0r9dmu6iceecx.png",
-      "id": 24
+      "id": 24,
+      "categoryId": 3
     },
     {
       "name": "Ann Blankenship",
@@ -39,7 +42,8 @@
       "feature": "Est alias nihil perf",
       "description": "Possimus porro duci",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659165099/anhhtus/ua2fnvezzti1i02javtq.png",
-      "id": 25
+      "id": 25,
+      "categoryId": 4
     },
     {
       "name": "Sara Schultz",
@@ -49,7 +53,8 @@
       "feature": "Blanditiis modi ipsu",
       "description": "Dolor consequatur E",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659165113/anhhtus/pkiq2otnh9wm22h2uhbz.png",
-      "id": 26
+      "id": 26,
+      "categoryId": 4
     },
     {
       "name": "Colt Willis",
@@ -59,7 +64,8 @@
       "feature": "Minim a omnis cillum",
       "description": "Qui aute qui nulla m",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659165127/anhhtus/egfe2otrrebjpbajwyfx.png",
-      "id": 27
+      "id": 27,
+      "categoryId": 5
     },
     {
       "name": "Cailin Mueller",
@@ -69,7 +75,8 @@
       "feature": "Similique ad perfere",
       "description": "Cupidatat facilis ve",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659165145/anhhtus/alfcduydwas5jued7ete.png",
-      "id": 28
+      "id": 28,
+      "categoryId": 6
     },
     {
       "name": "Kirestin Whitaker",
@@ -79,7 +86,8 @@
       "feature": "Ut sit maxime culpa",
       "description": "Ea dolore eu minim e",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659165163/anhhtus/vpvwy0w6bm5krb9ljd6n.png",
-      "id": 29
+      "id": 29,
+      "categoryId": 6
     },
     {
       "name": "Deborah Odonnell",
@@ -89,7 +97,8 @@
       "feature": "Magnam atque natus e",
       "description": "Ut consequat Maxime",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659165180/anhhtus/c97rqkbn9ur09vbvapjv.png",
-      "id": 30
+      "id": 30,
+      "categoryId": 5
     },
     {
       "name": "Zorita Cross",
@@ -99,7 +108,8 @@
       "feature": "Debitis dolor culpa ",
       "description": "Adipisicing nemo max",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659165197/anhhtus/fbwnejiaqtfqwrlbbpmx.png",
-      "id": 31
+      "id": 31,
+      "categoryId": 4
     },
     {
       "name": "Sage Jenkins",
@@ -109,7 +119,8 @@
       "feature": "Quam dolores officia",
       "description": "Excepturi Nam obcaec",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659165220/anhhtus/v2gc4dpvygtrmepdqidk.png",
-      "id": 32
+      "id": 32,
+      "categoryId": 3
     },
     {
       "name": "Oprah Graves",
@@ -119,25 +130,34 @@
       "feature": "Mollit eos nemo sed",
       "description": "Dolor in beatae esse",
       "imageUrl": "http://res.cloudinary.com/dv3vzmogk/image/upload/v1659165234/anhhtus/r7muns4zrivssrsbaf3v.png",
-      "id": 33
+      "id": 33,
+      "categoryId": 2
     }
   ],
   "category": [
     {
-      "name": "Danh muc1",
+      "name": "Dien thoai",
       "id": 1
     },
     {
-      "name": "Danh muc2",
+      "name": "Lap top",
       "id": 2
     },
     {
-      "name": "Danh muc3",
+      "name": "May tinh bang",
       "id": 3
     },
     {
-      "name": "Danh muc4",
+      "name": "Am Thanh",
       "id": 4
+    },
+    {
+      "name": "Dong ho",
+      "id": 5
+    },
+    {
+      "name": "Nha thong Minh",
+      "id": 6
     }
   ]
 }
