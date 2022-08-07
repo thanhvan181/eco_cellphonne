@@ -1,4 +1,4 @@
-import { Col, Row } from 'antd'
+import { Button, Col, Row } from 'antd'
 import React from 'react'
 import * as S from "./styles"
 import { useSelector } from 'react-redux'
@@ -70,11 +70,21 @@ const CartList = () => {
 
                   </Row>
               ))
-         }
-          <div>
-              <p>Tong tien tam tinh</p>
-              <span>{cartTotal}</span>
-          </div>
+          }
+          <Row>
+              <Col span={12}>
+                  <p>Tong tien tam tinh</p>
+              </Col>
+              <Col span={12}>
+                  <span>{cartTotal}</span>
+              </Col>
+          </Row>
+          <Row>
+              <S.Btn>Tiep tuc dat hang</S.Btn>
+          </Row>
+          <Row>
+              <S.BtnOuline>Chon them san pham khac</S.BtnOuline>
+          </Row>
           
     </S.Wrapper>
   )

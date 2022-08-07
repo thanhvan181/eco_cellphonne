@@ -1,5 +1,5 @@
 import { ShoppingCartOutlined, SearchOutlined, EnvironmentOutlined, CarOutlined, UserOutlined } from '@ant-design/icons'
-import { Button, Row, Col, Input, Select } from 'antd'
+import { Button, Row, Col, Input, Select, Form } from 'antd'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import * as S from "./Header.styles"
@@ -9,6 +9,8 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { getTotals } from '../../store/cart/cartSlide'
 import { logout } from '../../store/user/userSlide'
+import { searchSanpham } from '../../store/products/actions'
+
 
 
 
@@ -21,10 +23,15 @@ const Header = () => {
     (state: any) => state.user.isAuthenticated
   );
   const user = useSelector((state: any) => state.user.currentUser);
+  const onFinish = (value: any) => {
+    console.log('va', value)
+    dispatch(searchSanpham(value) as any);
 
+  }
   useEffect(() => {
     setCountCart(carts.length)
   }, [carts])
+
   return (
     <S.StyleHeader>
       <S.Container>
@@ -36,8 +43,16 @@ const Header = () => {
             </div>
           </Col>
           <Col span={10}>
-            <Input style={{ borderRadius: 10 }} prefix={<SearchOutlined onClick={() => console.log('search')
-            } />} placeholder="search..." allowClear />
+            <Form onFinish={onFinish} >
+              <Form.Item name="q">
+                <Input style={{ borderRadius: 10 }} prefix={<SearchOutlined onClick={() => console.log('search')
+                } />} placeholder="search..." allowClear />
+
+              </Form.Item>
+             
+
+            </Form>
+           
           </Col>
           <Col span={12}>
             <Row justify='end'>

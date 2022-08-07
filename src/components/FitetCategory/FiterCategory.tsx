@@ -1,6 +1,6 @@
 import { Row, Select } from 'antd'
 import React from 'react'
-
+import * as S from "./style"
 import { useSelector, useDispatch } from "react-redux";
 import { getProductinCategory } from '../../store/products/actions';
 
@@ -15,10 +15,12 @@ const FiterCategory = (props: Props) => {
 
     }
   return (
-      <div>
-          <Row>
-
-              <Select style={{ width: "40%" }} size="large" onChange={onChange}>
+      <S.WrapperSelect>
+          
+          <Row justify='end'>
+             
+             
+              <Select style={{ width: "20%" }} size="large" onChange={onChange}>
                   {list && list.map((sub: any) => {
                       return (
                           <>
@@ -34,7 +36,7 @@ const FiterCategory = (props: Props) => {
 
 
           </Row>
-    </div>
+    </S.WrapperSelect>
   )
 }
 

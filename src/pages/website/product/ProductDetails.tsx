@@ -7,7 +7,7 @@ import { getProductinCategory, readone } from '../../../store/products/actions'
 import { Link, useParams } from 'react-router-dom'
 import { ShoppingCartOutlined } from '@ant-design/icons'
 import { addToCart } from '../../../store/cart/cartSlide'
-
+import * as S from "./styles"
 
 const ProductDetails = () => {
     const productone = useSelector((store: any) => store.product.item.result)
@@ -37,35 +37,42 @@ const ProductDetails = () => {
 
     }
     return (
-        <div>
-            <Row>
-                <Col span={8}>
-                    <Image
-                        width={400}
-                        src={productone.image}
-                    />
+        <div style={{ maxWidth: 1100, margin: 'auto' }}>
+            <S.Detail>
+                <Row gutter={30} >
+                    <Col span={12}>
+                        <Image
+                            width={400}
+                            src={productone.image}
+                        />
 
-                </Col>
-                <Col span={16}>
-                    <h1>Name: { productone.name}</h1>
-                    <h1>Price: {productone.originalPrice}</h1>
-                    <p>{productone.description}</p>
-                    <Button onClick={() => addCart(productone)}>
-                        Mua Ngay
-                    </Button>
-                    <span><ShoppingCartOutlined /></span>
-                    <span>Them vao gio hang</span>
+                    </Col>
+                    <Col span={12}>
+                        <h1>Name: {productone.name}</h1>
+                        <h1>Price: {productone.originalPrice}</h1>
+                        <p>{productone.description}</p>
+                        <S.WrapperBtn>
+                            <S.Button onClick={() => addCart(productone)}>
+                                Mua Ngay
+                            </S.Button>
+                            <span><ShoppingCartOutlined /></span>
+                            <span>Them vao gio hang</span>
 
-                </Col>
-            </Row>
+                        </S.WrapperBtn>
+                       
+
+                    </Col>
+                </Row>
+          </S.Detail>
+            <h2>San pham cung loai</h2>
             <Row>
-                <h2>San pham cung loai</h2>
+             
 
                 {list && list.map((item: any) => {
                     return (
                         <Link to={`/product/${item._id}`}>
-                            <Col span={4}>
-                                <img src={item.image} alt="" />
+                            <Col span={6}>
+                                <img width={250} src={item.image} alt="" />
                                 <p>{item.saleOffPrice}</p>
                                 <p>{item.description}</p>
 
@@ -78,6 +85,9 @@ const ProductDetails = () => {
             </Row>
 
         </div>
+  
+        
+
     )
 }
 

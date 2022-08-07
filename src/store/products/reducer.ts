@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { getAlls, getProductinCategory, readone } from "./actions";
+import { getAlls, getProductinCategory, readone, searchSanpham } from "./actions";
 
 const initialState = {
   list: {
@@ -71,6 +71,24 @@ const productSlice = createSlice({
       state.list.error = action.error;
       state.list.result = [];
     },
+    [searchSanpham.pending as any]: (state, action) => {
+      state.list.loading = true;
+      state.list.result = [];
+      state.list.error = {};
+    },
+    [searchSanpham.fulfilled as any]: (state, action) => {
+      console.log("Actionsse", action);
+
+      state.list.loading = false;
+      state.list.result = action.payload.data;
+      state.list.error = {};
+    },
+    [searchSanpham.rejected as any]: (state, action) => {
+      state.list.loading = false;
+      state.list.error = action.error;
+      state.list.result = [];
+    },
+    
   },
 });
 export default productSlice.reducer;

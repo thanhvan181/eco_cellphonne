@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getAll, getproductsCate, read } from "../../service/product";
+import { getAll, getproductsCate, read, searchProduct } from "../../service/product";
 import * as TYPES from "./type";
 
 export const getAlls = createAsyncThunk(TYPES.GET_PRODUCTS, async () => {
@@ -45,3 +45,11 @@ export const getProductinCategory = createAsyncThunk(TYPES.GET_PRODUCTINCATE, as
   
 
 });
+export const searchSanpham = createAsyncThunk(
+  "product/searchproduct",
+  async (params: any) => {
+    const { data } = await searchProduct(params);
+
+    return data;
+  }
+);
