@@ -1,0 +1,6 @@
+.ant-form-item{
+    flex-direction: column;
+}
+.ant-form-horizontal .ant-form-item-label{
+    margin-top: 10px;
+}

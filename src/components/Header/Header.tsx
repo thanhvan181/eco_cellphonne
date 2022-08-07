@@ -1,26 +1,27 @@
-import { ShoppingCartOutlined, SearchOutlined, EnvironmentOutlined, CarOutlined } from '@ant-design/icons'
-import { Button, Row, Col, Input } from 'antd'
+import { ShoppingCartOutlined, SearchOutlined, EnvironmentOutlined, CarOutlined, UserOutlined } from '@ant-design/icons'
+import { Button, Row, Col, Input, Select } from 'antd'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import * as S from "./Header.styles"
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import { getTotals } from '../../store/cart/cartSlide'
+import { logout } from '../../store/user/userSlide'
 
 
 
 const Header = () => {
   const [countcart, setCountCart] = useState(0)
   const carts = useSelector((state: any) => state.cart.items)
-  console.log("cartItems", carts)
+  const { Option } = Select;
+  const dispatch = useDispatch()
+  const isAuthenticated = useSelector(
+    (state: any) => state.user.isAuthenticated
+  );
+  const user = useSelector((state: any) => state.user.currentUser);
 
-  const dataHeaderLeft = [
-    { text: "Gọi mua hàng 1800.2097", icon: "", link: "/" },
-    { text: "Cửa hàng gần bạn", icon: <EnvironmentOutlined style={{ fontSize: '150%' }} />, link: "/" },
-    { text: "Tra cứu đơn hàng", icon: <CarOutlined style={{ fontSize: '150%' }} />, link: "/" },
-    { text: `Gio hang(${countcart})`, icon: <ShoppingCartOutlined style={{ fontSize: '150%' }} />, link: "/cart" },
-  ]
   useEffect(() => {
     setCountCart(carts.length)
   }, [carts])
@@ -40,21 +41,84 @@ const Header = () => {
           </Col>
           <Col span={12}>
             <Row justify='end'>
-              {dataHeaderLeft.map(item => (
-                <Col key={item.text}>
-                  <Link to={item.link}>
+              
+                <Col >
+                  <Link to={"/"}>
                     <Row justify='center' gutter={4} style={{ maxWidth: 140, color: 'white' }}>
                       <Col span={6}>
-                        {item.icon}
+                      <EnvironmentOutlined style={{ fontSize: '150%' }} />
                       </Col>
                       <Col span={18}>
-                        {item.text}
+                      Gọi mua hàng 1800.2097
+                      </Col>
+                    </Row>
+                  </Link>
+
+              </Col>
+              <Col >
+                <Link to={"/"}>
+                  <Row justify='center' gutter={4} style={{ maxWidth: 140, color: 'white' }}>
+                    <Col span={6}>
+
+                    </Col>
+                    <Col span={18}>
+                      Cửa hàng gần bạn
+                    </Col>
+                  </Row>
+                </Link>
+
+              </Col>
+              <Col >
+                <Link to={"/cart"}>
+                  <Row justify='center' gutter={4} style={{ maxWidth: 140, color: 'white' }}>
+                    <Col span={6}>
+                      <ShoppingCartOutlined style={{ fontSize: '150%' }} />
+                    </Col>
+                    <Col span={18}>
+                      Gio hang({countcart})
+                    </Col>
+                  </Row>
+                </Link>
+
+              </Col>
+             
+              {!isAuthenticated ? (
+                <Col >
+                  <Link to={"/signin"}>
+                    <Row justify='center' gutter={4} style={{ maxWidth: 140, color: 'white' }}>
+                      <Col span={6}>
+                        <UserOutlined style={{ fontSize: '150%' }} />
+                      </Col>
+                      <Col span={18}>
+                        Dang nhap
                       </Col>
                     </Row>
                   </Link>
 
                 </Col>
-              ))}
+              ) : (
+                <>
+                    <Col >
+                      
+                        <Row justify='center' gutter={4} style={{ maxWidth: 140, color: 'white' }}>
+                          <Col span={6}>
+                            <UserOutlined style={{ fontSize: '150%' }} />
+                          </Col>
+                          <Col span={18}>
+                          {user.user.email}
+                        </Col>
+                        <Col span={18}>
+                          <a href="" onClick={(e) => dispatch(logout(e))}>logout</a>
+                        </Col>
+                        </Row>
+                      
+
+                    </Col>
+                   
+                    
+                </>
+              )}
+              
             </Row>
           </Col>
         </Row>
